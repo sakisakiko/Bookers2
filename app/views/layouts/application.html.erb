@@ -12,12 +12,22 @@
 
   <body>
     <header>
-      <nav>
-        <a href="/">Bookers</a>
-      </nav>
-      
+      <%=link_to "Bookers",root %>
+      <% if user_signed_in? %>
+       <li>
+         <%=link_to "Home",root %> <!--ここはルートパスではないはず。一覧ページ？-->
+       </li>
+       <li>
+         <%=link_to "Users",%>
+       </li>
     </header>
-    <footer></footer>
+    <main>
     <%= yield %>
+    </main>
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
+     
   </body>
+  
 </html>
