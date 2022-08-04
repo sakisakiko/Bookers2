@@ -2,9 +2,43 @@
 
 <div class="continer px-5 px-sm-0">
   <div class="row">
-    <%=render 'list',book:@book %>
-　　 <div class="col-md-8">
-     </div>
+    <div class="col-md-3">
+      <P>ここに画像表示</P>
+      <% @books.each do |book| %>
+        <%=image_tag book.user.get_profile_image(100,100) %>
+      <% end %>
+          <table>
+            <body>
+             <tr>
+              <th>name</th>
+              <th><%=@user.name %></th>
+              </tr>
+              <tr>
+              <th>introduction</th>
+              <th><%=@user.introduction %></th>
+             </tr>
+            </body>
+          </table>
+         
+        <div class="row">
+          <% if @user==current_user %>
+            <%=link_to edit_user_path(@user) do %>
+              <div class="btn btn-outline-secondary btn-block">
+                ユーザー編集画面へ
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <h2>New book</h2>
+         <%=form_with model: @book do |f|%>
+          <h6>Title</h6>
+           <%=f.text_field:title %>
+          <h6>Opinion</h6>
+           <%=f.text_area:body %>
+           <%=f.submit 'Create Book' %>
+         <% end %>
+  </div>
+　　<div class="col-md-8">
+    </div>
   </div>
 </div>
-
