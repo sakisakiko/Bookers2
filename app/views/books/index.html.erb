@@ -1,14 +1,18 @@
 <h1>Books一覧画面</h1>
-<% if @book.errors.aniy? %>
+<% if @book.errors.any? %>
  <%=@book.errors.count %> errors prohibited this obj from being saved:
- 　<ul>
- 　    <% @book.errors.full_messages.eash do |message| %>
- 　</ul>
+  
+  <ul>
+    <% @book .errors.full_messages.each do |message| %>
+     <li><%=message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div class="continer px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <P>ここに画像表示</P>
-        <%=image_tag @user.get_profile_image(100,100) %>
+         <%=image_tag @user.get_profile_image(100,100) %>
           <table>
             <body>
              <tr>
