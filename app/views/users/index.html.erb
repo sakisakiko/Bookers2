@@ -1,9 +1,14 @@
 <h1>user一覧</h1>
 <div class="continer">
   <div class="row">
-　　 <div class="col-m-8">
-　　     <h2>Users</h2>
-　　     <table class="table">
+    
+   <div class="col-md-3">
+     <%=render'books/list', book: @book, user: @user %>
+   </div>  
+   
+　 <div class="col-md-8">
+　　<h2>Users</h2>
+　　  <table class="table">
 　　     <tr>
 　　       <th>image</th>
 　　       <th>name</th>
@@ -19,8 +24,8 @@
 　　        <th><%=link_to 'Destroy',user_path(user.id),method: :delete %></th>
 　　     </tr>
 　　    <% end %>
-　　   
 　　   </table>　
-     </div>
+    </div>
+    
   </div>
 </div>

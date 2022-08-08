@@ -2,9 +2,14 @@
 
 <div class="continer">
   <div class="row">
-　　 <div class="col-md-8">
-　　   <h2>Books</h2>
-　　     <table class="table">
+      
+   <div class="col-md-3">
+     <%=render'books/list', book: @book, user: @user %>
+   </div>
+   
+　 <div class="col-md-8">
+　　 <h2>Books</h2>
+　　    <table class="table">
 　　     <tr>
 　　       <th></th>
 　　       <th>Title</th>
@@ -19,9 +24,9 @@
 　　       <th><%=book.body %></th>
 　　     </tr>
 　　    <% end %>
-　　   
 　　   </table>　
      </div>
+     
   </div>
 </div>
 
