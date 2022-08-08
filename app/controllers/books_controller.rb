@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+   # 他人が編集画面に遷移できないようにする
+  before_action :correct_user,only: [:edit, :update]
 
   def show
     @book=Book.find(params[:id])
@@ -52,6 +54,14 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title,:body,)
   end
   
- 
+  
+  def correct_user
+      @book=Book.find(params[:id])
+      @user=@book.user
+      redirect_to books_path unless @user == current_user
+  end
+   
+   
+  
 end
 
