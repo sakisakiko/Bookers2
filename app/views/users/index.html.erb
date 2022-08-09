@@ -1,5 +1,4 @@
-<h1>user一覧</h1>
-<div class="continer">
+<div class="container px-5">
   <div class="row">
     
    <div class="col-md-3">
@@ -9,13 +8,14 @@
 　 <div class="col-md-8">
 　　<h2>Users</h2>
 　　  <table class="table">
+　　   <thead>
 　　     <tr>
 　　       <th>image</th>
 　　       <th>name</th>
 　　       <th></th>
 　　     </tr>
-　　     
-　　     <% @users.each do |user| %>
+　　    </thead>
+　　    <% @users.each do |user| %>
 　　     <tr>
 　　       <th><%=image_tag user.get_profile_image(80,80) %></th>
 　　       <th><%=user.name %></th>

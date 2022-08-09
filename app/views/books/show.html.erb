@@ -16,8 +16,8 @@
 　　       <th><%=link_to @book.title,book_path(@book.id) %></th>
 　　       <th><%=@book.body %></th>
 　　       <% if @book.user==current_user %>
-　　       <th><%=link_to "Edit",edit_book_path(@book.id) %></th>
-　　       <th><%=link_to "Destroy",book_path(@book.id),method: :delete %></th>
+　　       <th><%=link_to "Edit",edit_book_path(@book.id),class: 'btn btn-success'%></th>
+　　       <th><%=link_to "Destroy",book_path(@book.id),method: :delete,class: 'btn btn-danger'%></th>
 　　       <% end %>
 　　    </tr>
 　　   </table>
