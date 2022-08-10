@@ -28,14 +28,6 @@ class UsersController < ApplicationController
        render:edit
      end
   end
-
-   # destroyの項目後で消す(ユーザ削除)
-  def destroy 
-    @user=User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
-  end
-  
   
   private
    def user_params
